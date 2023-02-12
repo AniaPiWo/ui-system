@@ -1,13 +1,13 @@
 import { Meta, Story } from "@storybook/react";
 import * as React from "react";
-import { Checkbox } from "./Checkbox";
+import { Checkbox as MyCheckbox } from "./Checkbox";
 
 export default {
-  component: Checkbox,
+  component: MyCheckbox,
 } as Meta;
 
-export const CheckBox: Story = (args) => <Checkbox {...args}></Checkbox>;
+export const Checkbox: Story = (args) => <MyCheckbox {...args}></MyCheckbox>;
 
-CheckBox.args = {
+Checkbox.args = {
   disabled: false,
 };
