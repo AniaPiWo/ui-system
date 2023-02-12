@@ -1,3 +1,4 @@
+import { PropsWithChildren } from "react";
 import css from "./Switch.module.css";
 import * as React from "react";
 
@@ -6,8 +7,11 @@ interface SwitchProps {
   disabled?: boolean;
 }
 
-export const Switch = (props: SwitchProps) => {
-  const disabledClass = disabled ? css.disabled : " ";
+export const Switch = ({
+  disabled = false,
+  checked = false,
+}: PropsWithChildren<SwitchProps>) => {
+  const disabledClass = disabled == true ? css.disabled : " ";
 
   const sliderClasses = [css.slider, disabledClass].join(" ");
 
@@ -15,11 +19,7 @@ export const Switch = (props: SwitchProps) => {
 
   return (
     <label className={switchClasses}>
-      <input
-        type="checkbox"
-        checked={props.checked}
-        disabled={props.disabled}
-      ></input>
+      <input type="checkbox" checked={checked} disabled={disabled}></input>
       <span className={sliderClasses}></span>
     </label>
   );

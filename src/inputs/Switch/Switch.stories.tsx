@@ -10,4 +10,5 @@ export const Switch: Story = (args) => <MySwitch {...args}></MySwitch>;
 
 Switch.args = {
   disabled: false,
+  checked: false,
 };

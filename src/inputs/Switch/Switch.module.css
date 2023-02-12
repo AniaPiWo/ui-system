@@ -55,7 +55,22 @@ input:checked + .slider:before {
   bottom: 4px;
 }
 
-.switch .disabled {
-  background: rgba(178, 51, 134, 0.3);
+.disabled.slider {
+  background-color: rgba(178, 51, 134, 0.3);
+  transition: none;
+}
+
+.disabled .slider:before {
+  background-color: #aeaaae;
+  transition: none;
+}
+
+.disabled input:checked + .slider {
+  background-color: rgba(178, 51, 134, 0.3);
+  transition: none;
+}
+
+.switch.disabled {
   border: 2px solid #aeaaae;
+  transition: none;
 }
