@@ -1,7 +1,8 @@
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, Fragment, useState } from "react";
 import * as React from "react";
-
-import * as styles from "./Button.module.css";
+import * as css from "./Button.module.css";
+import { IconLoading } from "../../icons/Loading";
+import { IconPlus } from "../../icons/IconPlus";
 
 interface ButtonProps {
   onClick(): void;
@@ -12,24 +13,38 @@ interface ButtonProps {
 
 export const Button = ({
   disabled = false,
+  isLoading = false,
   variant = "primary",
   ...props
 }: PropsWithChildren<ButtonProps>) => {
-  const variantClass =
-    variant === "primary" ? styles.primary : styles.secondary;
+  const [isPressed, setPressed] = useState(false);
+
+  const pressedClass = isPressed ? css.pressed : " ";
+
+  const variantClass = variant === "primary" ? css.primary : css.secondary;
 
   const getDisabledClassForSpecificVariant = (): string | void => {
     if (disabled) {
       return variant === "primary"
-        ? styles.disabledPrimary
-        : styles.disabledSecondary;
+        ? css.disabledPrimary
+        : css.disabledSecondary;
+    }
+  };
+
+  const getLoadingClassForSpecificVariant = (): string => {
+    if (isLoading) {
+      return variant === "primary"
+        ? css.isLoadingPrimary
+        : css.isLoadingSecondary;
     }
   };
 
   const dynamicClasses = [
-    styles.template,
+    css.template,
     variantClass,
+    pressedClass,
     getDisabledClassForSpecificVariant(),
+    getLoadingClassForSpecificVariant(),
   ].join(" ");
 
   return (
@@ -37,8 +52,16 @@ export const Button = ({
       className={dynamicClasses}
       onClick={props.onClick}
       disabled={disabled}
+      onMouseDown={() => setPressed(true)}
+      onMouseUp={() => setPressed(false)}
     >
-      {props.children}
+      {isLoading ? (
+        <Fragment>{<IconLoading />}Loading...</Fragment>
+      ) : (
+        <Fragment>
+          <IconPlus /> {props.children}
+        </Fragment>
+      )}
     </button>
   );
 };
