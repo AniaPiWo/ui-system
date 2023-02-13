@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+.inputWrapper {
+  font-family: "Inter", sans-serif;
+  position: relative;
+  display: inline-block;
+}
+
+.baseLabel {
+  display: block;
+  transition-duration: 0.3s;
+}
+
+.inputWrapper input {
+  display: block;
+  padding: 16px;
+  font-weight: 400;
+  font-size: 16px;
+  min-width: 210px;
+  color: black;
+  border: 2px solid #484649;
+  outline: none;
+}
+
+.inputLabelActive {
+  z-index: 2;
+  position: absolute;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: black;
+  background-color: white;
+  top: -8px;
+  left: 16px;
+  padding: 0 4px;
+}
+
+.inputLabelInactive {
+  z-index: 2;
+  position: absolute;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #605d62;
+  top: 14px;
+  left: 16px;
+}
+
+.error {
+  color: #b3261e;
+  padding-left: 16px;
+  padding-top: 5px;
+  font-size: 12px;
+}
+
+.hint {
+  color: #605d62;
+  padding-left: 16px;
+  padding-top: 5px;
+  font-size: 12px;
+}
+
+.inputError input {
+  border: 2px solid #b3261e;
+  outline: none;
+}
+
+.inputError .inputLabelActive {
+  color: #b3261e;
+}
+
+.errorIcon {
+  position: absolute;
+  left: 216px;
+  top: 17px;
+  width: 20px;
+  height: 20px;
+}
+
+.inputFocused input {
+  border: 2px solid #23a094;
+  outline: none;
+}
+
+.inputFocused .inputLabelActive {
+  color: #23a094;
+}
+
+.inputTyped input {
+  border: 2px solid #484649;
+  outline: none;
+}
+
+.inputTyped .inputLabelActive {
+  color: #484649;
+}
+
+.closeIcon {
+  position: absolute;
+  left: 216px;
+  top: 17px;
+  width: 20px;
+  height: 20px;
+  display: none;
+}
+
+.inputFocused .closeIcon {
+  display: block;
+}
