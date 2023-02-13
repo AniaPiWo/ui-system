@@ -6,7 +6,9 @@ export default {
   component: MySwitch,
 } as Meta;
 
-export const Switch: Story = (args) => <MySwitch {...args}></MySwitch>;
+export const Switch: Story = (args) => (
+  <MySwitch {...args} onChange={() => {}}></MySwitch>
+);
 
 Switch.args = {
   disabled: false,
