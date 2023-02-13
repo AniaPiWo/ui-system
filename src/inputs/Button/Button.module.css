@@ -105,6 +105,18 @@ button {
   fill: white;
 }
 
+.disabledPrimary:hover svg path {
+  fill: #1c1b1f;
+}
+
+.disabledSecondary svg path {
+  fill: #1c1b1f;
+}
+
+.disabledSecondary:hover svg path {
+  fill: #1c1b1f;
+}
+
 .secondary svg {
   margin-right: 11px;
 }
