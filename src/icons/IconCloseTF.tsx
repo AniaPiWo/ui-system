@@ -1,6 +1,8 @@
 import * as React from "react";
 
+
 export const IconCloseTF = () => (
+
   <svg
     width="20"
     height="20"

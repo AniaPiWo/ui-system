@@ -14,7 +14,12 @@ export default {
 } as Meta;
 
 export const Button: Story = (args) => (
-  <MyButton {...args} onClick={() => {}}>
+  <MyButton
+    {...args}
+    onClick={() => {
+      console.log("Button clicked!");
+    }}
+  >
     Click me!
   </MyButton>
 );
