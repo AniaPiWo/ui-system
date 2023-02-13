@@ -27,7 +27,7 @@ export const Textfield = (props: TextFieldProps) => {
 
   const typedInputClass = !!props.value ? css.inputTyped : "";
   const errorInputClass = !!props.error ? css.inputError : "";
-  const focusedInputClass = !!focused ? css.inputFocused : "";
+  const focusedInputClass = !!focused && !props.error ? css.inputFocused : "";
 
   const labelDynamicClasses = [css.baseLabel, labelActiveClass].join(" ");
   const inputDynamicClasses = [
