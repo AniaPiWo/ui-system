@@ -31,7 +31,7 @@ export const Button = ({
     }
   };
 
-  const getLoadingClassForSpecificVariant = (): string => {
+  const getLoadingClassForSpecificVariant = (): string | void => {
     if (isLoading) {
       return variant === "primary"
         ? css.isLoadingPrimary
