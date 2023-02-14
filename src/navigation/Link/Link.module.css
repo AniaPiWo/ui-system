@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+.link {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #b23386;
+  letter-spacing: 0.1px;
+}
+
+.link:hover {
+  cursor: pointer;
+  text-decoration-line: underline;
+  text-underline-offset: 3px;
+}
+
+.disabled {
+  cursor: default;
+  pointer-events: none;
+  color: #1c1b1f;
+  fill: #b23386;
+  opacity: 0.38;
+}
+
+.link svg path {
+  fill: #b23386;
+}
+
+.link svg {
+  width: 12px;
+  height: 12px;
+  padding-right: 11px;
+}
+
+.disabled.link svg path {
+  fill: #1c1b1f;
+}
