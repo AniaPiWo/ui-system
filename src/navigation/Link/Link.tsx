@@ -4,12 +4,10 @@ import * as css from "./Link.module.css";
 import { IconPlus } from "../../icons/IconPlus";
 
 interface LinkProps {
+  to: string;
   id: string;
-  to?: string;
-  value?: string;
   target?: "_blank" | "_self" | "_parent" | "_top";
   disabled?: boolean;
-  onClick(): void;
 }
 
 export const Link = ({
@@ -20,13 +18,9 @@ export const Link = ({
   const linkClasses = [css.link, disabledClass].join(" ");
 
   return (
-    <a
-      className={linkClasses}
-      id={props.id}
-      target={props.target}
-      onClick={() => {}}
-    >
-      <IconPlus /> {props.value}
+    <a className={linkClasses} id={props.id} target={props.target}>
+      <IconPlus />
+      Link
     </a>
   );
 };
