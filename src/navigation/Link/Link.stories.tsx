@@ -1,6 +1,7 @@
 import { Meta, Story } from "@storybook/react";
 import * as React from "react";
 import { Link as MyLink } from "./Link";
+import { IconPlus } from "../../icons/IconPlus";
 
 export default {
   component: MyLink,
@@ -15,6 +16,8 @@ export const Link: Story = (args) => (
     }}
     {...args}
   >
+    {" "}
+    <IconPlus />
     This is link
   </MyLink>
 );

@@ -1,7 +1,6 @@
 import { PropsWithChildren } from "react";
 import * as React from "react";
 import * as css from "./Link.module.css";
-import { IconPlus } from "../../icons/IconPlus";
 
 interface LinkProps {
   to: string;
@@ -23,8 +22,7 @@ export const Link = (props: PropsWithChildren<LinkProps>) => {
       target={props.target}
       onClick={props.onClick}
     >
-      <IconPlus /> {props.children}
-      Link
+      {props.children}
     </a>
   );
 };
