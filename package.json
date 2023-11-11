@@ -45,12 +45,24 @@
     "sirv-cli": "^2.0.2",
     "storybook-css-modules": "^1.0.8",
     "typescript": "^4.9.4",
-    "husky": "^8.0.0"
+    "husky": "^8.0.0",
+    "commitlint": "^15.0.0",
+    "@commitlint/config-conventional": "^15.0.0"
   },
   "dependencies": {
     "@storybook/react": "^6.5.16",
     "copyfiles": "^2.4.1",
     "cross-env": "^7.0.3",
     "rimraf": "^4.1.2"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   }
 }

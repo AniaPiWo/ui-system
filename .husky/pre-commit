@@ -3,3 +3,5 @@
 
 npm test
 npm test
+yarn lint
+yarn pretty
