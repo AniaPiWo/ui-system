@@ -13,7 +13,8 @@
     "serve-storybook": "serve storybook-static",
     "clean": "rimraf dist/",
     "copy-files": "copyfiles -u 1 src/**/*.css dist/",
-    "build": "yarn clean && tsc -b && yarn copy-files"
+    "build": "yarn clean && tsc -b && yarn copy-files",
+    "prepare": "husky install"
   },
   "publishConfig": {
     "registry": "http://139.59.154.199:4873"
@@ -43,7 +44,8 @@
     "react-dom": "^18.2.0",
     "sirv-cli": "^2.0.2",
     "storybook-css-modules": "^1.0.8",
-    "typescript": "^4.9.4"
+    "typescript": "^4.9.4",
+    "husky": "^8.0.0"
   },
   "dependencies": {
     "@storybook/react": "^6.5.16",
