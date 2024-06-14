@@ -13,7 +13,8 @@
     "serve-storybook": "serve storybook-static",
     "clean": "rimraf dist/",
     "copy-files": "copyfiles -u 1 src/**/*.css dist/",
-    "build": "yarn clean && tsc -b && yarn copy-files"
+    "build": "yarn clean && tsc -b && yarn copy-files",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "publishConfig": {
     "registry": "http://139.59.154.199:4873"
@@ -34,6 +35,7 @@
     "@types/jest": "^29.2.5",
     "babel-loader": "^8.3.0",
     "core-js": "^3.27.1",
+    "eslint": "^9.4.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.0.0",
     "preact-cli": "^3.4.2",
