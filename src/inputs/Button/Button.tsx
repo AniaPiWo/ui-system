@@ -1,6 +1,7 @@
 import { PropsWithChildren } from "react";
 import * as React from "react";
-
+import PlusIcon from "../../assets/icons/PlusIcon";
+import LoadingIcon from "../../assets/icons/LoadingIcon";
 import styles from "./Button.module.css";
 
 interface ButtonProps {
@@ -8,11 +9,15 @@ interface ButtonProps {
   disabled?: boolean;
   variant?: "primary" | "secondary";
   isLoading?: boolean;
+  icon?: boolean;
+  type?: "button" | "submit";
 }
 
 export const Button = ({
   disabled = false,
   variant = "primary",
+  type = "button",
+  icon = false,
   ...props
 }: PropsWithChildren<ButtonProps>) => {
   const variantClass =
@@ -37,7 +42,17 @@ export const Button = ({
       className={dynamicClasses}
       onClick={props.onClick}
       disabled={disabled}
+      type={type}
     >
+      {icon && (
+        <span className={styles.icon}>
+          {props.isLoading && !disabled ? (
+            <LoadingIcon className={styles.loading} />
+          ) : (
+            <PlusIcon />
+          )}
+        </span>
+      )}{" "}
       {props.children}
     </button>
   );

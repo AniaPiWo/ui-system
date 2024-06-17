@@ -10,6 +10,7 @@ export default {
       options: ["primary", "secondary"],
       control: { type: "select" },
     },
+    icon: {},
   },
 } as Meta;
 
