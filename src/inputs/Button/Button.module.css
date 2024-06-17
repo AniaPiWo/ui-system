@@ -43,6 +43,7 @@
 .disabledSecondary {
   border: 1px solid rgba(28, 27, 31, 0.12);
   opacity: 0.38;
+  pointer-events: none;
 }
 
 .primary:hover {
@@ -77,6 +78,7 @@
   box-shadow: unset;
   filter: unset;
   color: #1c1b1f;
+  pointer-events: none;
 }
 
 .disabledPrimary svg,
