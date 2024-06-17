@@ -59,7 +59,7 @@ export const Button = ({
           )}
         </span>
       )}{" "}
-      {props.children}
+      {props.isLoading ? "Loading..." : props.children}
     </button>
   );
 };
