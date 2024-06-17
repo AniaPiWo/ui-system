@@ -37,10 +37,16 @@ export const Button = ({
     getDisabledClassForSpecificVariant(),
   ].join(" ");
 
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    if (!disabled && !props.isLoading) {
+      props.onClick();
+    }
+  };
+
   return (
     <button
       className={dynamicClasses}
-      onClick={props.onClick}
+      onClick={handleClick}
       disabled={disabled}
       type={type}
     >
