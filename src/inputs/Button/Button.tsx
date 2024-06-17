@@ -18,6 +18,7 @@ export const Button = ({
   variant = "primary",
   type = "button",
   icon = false,
+  isLoading = false,
   ...props
 }: PropsWithChildren<ButtonProps>) => {
   const variantClass =
@@ -35,10 +36,11 @@ export const Button = ({
     styles.template,
     variantClass,
     getDisabledClassForSpecificVariant(),
+    isLoading ? styles.loadingState : "",
   ].join(" ");
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    if (!disabled && !props.isLoading) {
+    if (!disabled && !isLoading) {
       props.onClick();
     }
   };
@@ -47,19 +49,19 @@ export const Button = ({
     <button
       className={dynamicClasses}
       onClick={handleClick}
-      disabled={disabled}
+      disabled={disabled || isLoading}
       type={type}
     >
       {icon && (
         <span className={styles.icon}>
-          {props.isLoading && !disabled ? (
+          {isLoading && !disabled ? (
             <LoadingIcon className={styles.loading} />
           ) : (
             <PlusIcon />
           )}
         </span>
       )}{" "}
-      {props.isLoading ? "Loading..." : props.children}
+      {isLoading ? "Loading..." : props.children}
     </button>
   );
 };

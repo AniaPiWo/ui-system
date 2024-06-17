@@ -99,6 +99,10 @@
   background: #fff;
 }
 
+.loadingState {
+  pointer-events: none;
+}
+
 .loading {
   animation: spin 1s linear infinite;
   fill: none !important;
