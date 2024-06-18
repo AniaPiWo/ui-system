@@ -19,6 +19,7 @@ export const Button = ({
   type = "button",
   icon = false,
   isLoading = false,
+  onClick,
   ...props
 }: PropsWithChildren<ButtonProps>) => {
   const variantClass =
@@ -41,7 +42,7 @@ export const Button = ({
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     if (!disabled && !isLoading) {
-      props.onClick();
+      onClick();
     }
   };
 

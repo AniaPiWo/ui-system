@@ -3,8 +3,6 @@ import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import { Button } from "./Button";
-import PlusIcon from "../../assets/icons/PlusIcon";
-import LoadingIcon from "../../assets/icons/LoadingIcon";
 
 jest.mock("../../assets/icons/PlusIcon", () => () => (
   <svg data-testid="plus-icon" />

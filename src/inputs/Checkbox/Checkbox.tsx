@@ -20,6 +20,11 @@ export const Checkbox = ({
   value,
   onChange,
 }: CheckboxProps) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (!disabled) {
+      onChange();
+    }
+  };
   return (
     <label
       className={`${styles.container} ${disabled ? styles.disabled : ""}`}
@@ -32,7 +37,7 @@ export const Checkbox = ({
         value={value}
         checked={checked}
         disabled={disabled}
-        onChange={onChange}
+        onChange={handleChange}
         className={styles.checkbox}
       />
       {label}
