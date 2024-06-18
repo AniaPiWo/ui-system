@@ -35,10 +35,7 @@ export const Checkbox = ({
   };
 
   return (
-    <label
-      className={`${styles.container} ${disabled ? styles.disabled : ""}`}
-      htmlFor={id}
-    >
+    <label className={`${styles.container} ${disabled ? styles.disabled : ""}`}>
       <input
         type="checkbox"
         id={id}

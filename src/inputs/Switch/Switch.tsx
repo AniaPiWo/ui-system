@@ -14,21 +14,26 @@ export const Switch = ({
   disabled = false,
   onChange,
 }: SwitchProps) => {
+  const [isChecked, setIsChecked] = React.useState(checked);
+
+  React.useEffect(() => {
+    setIsChecked(checked);
+  }, [checked]);
+
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (!disabled) {
-      onChange(event.target.checked);
+      const newChecked = event.target.checked;
+      setIsChecked(newChecked);
+      onChange(newChecked);
     }
   };
 
   return (
-    <label
-      className={`${styles.switch} ${disabled ? styles.disabled : ""}`}
-      htmlFor={id}
-    >
+    <label className={`${styles.switch} ${disabled ? styles.disabled : ""}`}>
       <input
         type="checkbox"
         id={id}
-        checked={checked}
+        checked={isChecked}
         disabled={disabled}
         onChange={handleChange}
         className={styles.input}
