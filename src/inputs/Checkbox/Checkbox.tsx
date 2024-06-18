@@ -14,8 +14,8 @@ export interface CheckboxProps {
 export const Checkbox = ({
   id,
   label,
-  checked,
-  disabled,
+  checked = false,
+  disabled = false,
   name,
   value,
   onChange,
