@@ -1,9 +1,9 @@
 import { Meta, Story } from "@storybook/react";
 import * as React from "react";
-import { Checkbox as MyCheckbox, CheckboxProps } from "./Checkbox";
+import { Switch as MySwitch, SwitchProps } from "./Switch";
 
 export default {
-  component: MyCheckbox,
+  component: MySwitch,
   argTypes: {
     label: { control: "text" },
     checked: { control: "boolean" },
@@ -12,7 +12,7 @@ export default {
   },
 } as Meta;
 
-export const Checkbox: Story<CheckboxProps> = (args) => {
+export const Switch: Story<SwitchProps> = (args) => {
   const [checked, setChecked] = React.useState(args.checked);
 
   React.useEffect(() => {
@@ -24,12 +24,11 @@ export const Checkbox: Story<CheckboxProps> = (args) => {
     args.onChange(newChecked);
   };
 
-  return <MyCheckbox {...args} checked={checked} onChange={handleChange} />;
+  return <MySwitch {...args} checked={checked} onChange={handleChange} />;
 };
 
-Checkbox.args = {
-  id: "checkbox",
-  label: "Checkbox label",
+Switch.args = {
+  id: "switch",
   checked: false,
   disabled: false,
 };
