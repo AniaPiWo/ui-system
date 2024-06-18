@@ -1,14 +1,14 @@
 import * as React from "react";
 import styles from "./Checkbox.module.css";
 
-interface CheckboxProps {
+export interface CheckboxProps {
   id: string;
   label?: string;
   checked: boolean;
   disabled?: boolean;
   name?: string;
   value?: string;
-  onChange(): void;
+  onChange(checked: boolean): void;
 }
 
 export const Checkbox = ({
@@ -20,11 +20,20 @@ export const Checkbox = ({
   value,
   onChange,
 }: CheckboxProps) => {
+  const [isChecked, setIsChecked] = React.useState(checked);
+
+  React.useEffect(() => {
+    setIsChecked(checked);
+  }, [checked]);
+
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (!disabled) {
-      onChange();
+      const newChecked = event.target.checked;
+      setIsChecked(newChecked);
+      onChange(newChecked);
     }
   };
+
   return (
     <label
       className={`${styles.container} ${disabled ? styles.disabled : ""}`}
@@ -35,7 +44,7 @@ export const Checkbox = ({
         id={id}
         name={name}
         value={value}
-        checked={checked}
+        checked={isChecked}
         disabled={disabled}
         onChange={handleChange}
         className={styles.checkbox}

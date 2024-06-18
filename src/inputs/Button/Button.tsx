@@ -4,7 +4,7 @@ import PlusIcon from "../../assets/icons/PlusIcon";
 import LoadingIcon from "../../assets/icons/LoadingIcon";
 import styles from "./Button.module.css";
 
-interface ButtonProps {
+export interface ButtonProps {
   onClick(): void;
   disabled?: boolean;
   variant?: "primary" | "secondary";
