@@ -1,33 +1,21 @@
-import { Meta, Story } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react";
 import * as React from "react";
-import { Checkbox as MyCheckbox, CheckboxProps } from "./Checkbox";
+import { Checkbox, CheckboxProps } from "./Checkbox";
 
 export default {
-  component: MyCheckbox,
-  argTypes: {
-    label: { control: "text" },
-    checked: { control: "boolean" },
-    disabled: { control: "boolean" },
-    onChange: { action: "changed" },
-  },
+  component: Checkbox,
+  title: "Inputs/Checkbox",
 } as Meta;
 
-export const Checkbox: Story<CheckboxProps> = (args) => {
-  const [checked, setChecked] = React.useState(args.checked);
-
-  React.useEffect(() => {
-    setChecked(args.checked);
-  }, [args.checked]);
-
-  const handleChange = (newChecked: boolean) => {
-    setChecked(newChecked);
-    args.onChange(newChecked);
-  };
-
-  return <MyCheckbox {...args} checked={checked} onChange={handleChange} />;
+const Template: StoryFn<CheckboxProps> = (args) => {
+  return <Checkbox {...args} />;
 };
 
-Checkbox.args = {
+export const CheckboxStory = Template.bind({});
+CheckboxStory.args = {
+  onChange: () => {
+    console.log("Checkbox changed!");
+  },
   id: "checkbox",
   label: "Checkbox label",
   checked: false,

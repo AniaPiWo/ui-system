@@ -1,11 +1,14 @@
-import * as React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./Switch.module.css";
 
 export interface SwitchProps {
   id: string;
+  label?: string;
   checked: boolean;
   disabled?: boolean;
-  onChange(checked: boolean): void;
+  name?: string;
+  value?: string;
+  onChange(event: React.ChangeEvent<HTMLInputElement>): void;
 }
 
 export const Switch = ({
@@ -13,18 +16,19 @@ export const Switch = ({
   checked = false,
   disabled = false,
   onChange,
+  name,
+  value,
 }: SwitchProps) => {
-  const [isChecked, setIsChecked] = React.useState(checked);
+  const [isChecked, setIsChecked] = useState(checked);
 
-  React.useEffect(() => {
+  useEffect(() => {
     setIsChecked(checked);
   }, [checked]);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (!disabled) {
-      const newChecked = event.target.checked;
-      setIsChecked(newChecked);
-      onChange(newChecked);
+      setIsChecked(event.target.checked);
+      onChange(event);
     }
   };
 
@@ -33,6 +37,8 @@ export const Switch = ({
       <input
         type="checkbox"
         id={id}
+        name={name}
+        value={value}
         checked={isChecked}
         disabled={disabled}
         onChange={handleChange}

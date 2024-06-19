@@ -1,24 +1,27 @@
 // Button.stories.tsx
 import { Meta, Story } from "@storybook/react";
 import * as React from "react";
-import { Button as MyButton, ButtonProps } from "./Button";
+import { Button, ButtonProps } from "./Button";
 
 export default {
-  component: MyButton,
+  component: Button,
+  title: "Inputs/Button",
   argTypes: {
     variant: {
       options: ["primary", "secondary"],
       control: { type: "select" },
     },
-    icon: {},
   },
 } as Meta;
 
-export const Button: Story<ButtonProps> = (args) => (
-  <MyButton {...args}>Click me!</MyButton>
+const Template: Story<ButtonProps> = (args) => (
+  <Button {...args} onClick={() => console.log("Button clicked!")}>
+    Click me!
+  </Button>
 );
 
-Button.args = {
-  disabled: false,
+export const ButtonStory = Template.bind({});
+ButtonStory.args = {
   variant: "primary",
+  disabled: false,
 };

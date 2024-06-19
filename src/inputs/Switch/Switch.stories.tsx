@@ -1,34 +1,23 @@
 import { Meta, Story } from "@storybook/react";
 import * as React from "react";
-import { Switch as MySwitch, SwitchProps } from "./Switch";
+import { Switch, SwitchProps } from "./Switch";
 
 export default {
-  component: MySwitch,
-  argTypes: {
-    label: { control: "text" },
-    checked: { control: "boolean" },
-    disabled: { control: "boolean" },
-    onChange: { action: "changed" },
-  },
+  component: Switch,
+  title: "Inputs/Switch",
 } as Meta;
 
-export const Switch: Story<SwitchProps> = (args) => {
-  const [checked, setChecked] = React.useState(args.checked);
-
-  React.useEffect(() => {
-    setChecked(args.checked);
-  }, [args.checked]);
-
-  const handleChange = (newChecked: boolean) => {
-    setChecked(newChecked);
-    args.onChange(newChecked);
-  };
-
-  return <MySwitch {...args} checked={checked} onChange={handleChange} />;
+const Template: Story<SwitchProps> = (args) => {
+  return <Switch {...args} />;
 };
 
-Switch.args = {
+export const SwitchStory = Template.bind({});
+SwitchStory.args = {
+  onChange: () => {
+    console.log("Switch changed!");
+  },
   id: "switch",
+  label: "Switch label",
   checked: false,
   disabled: false,
 };
