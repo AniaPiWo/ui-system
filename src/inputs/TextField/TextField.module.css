@@ -1,0 +1,109 @@
+.inputWrapper {
+  font-family: "Inter", sans-serif;
+  position: relative;
+  display: inline-block;
+}
+
+.baseLabel {
+  display: block;
+  transition-duration: 0.3s;
+}
+
+.labelWithIcon {
+  margin-left: 24px;
+}
+
+.inputWrapper input {
+  display: block;
+  padding: 16px 40px 16px 16px;
+  font-weight: 400;
+  font-size: 16px;
+  min-width: 210px;
+  color: #000;
+  outline: 2px solid black;
+  border: none;
+  transition-duration: 0.3s;
+}
+
+.inputLabelTop {
+  position: absolute;
+  top: -10px;
+  left: 12px;
+  font-size: 12px;
+  background: white;
+  padding-inline: 4px;
+  z-index: 2;
+}
+
+.inputLabelInside {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 2;
+}
+
+.focusedLabel {
+  color: #23a094;
+}
+
+.focusedWrapper input:focus {
+  outline: 2px solid #23a094;
+}
+
+.hint,
+.error {
+  font-family: "Inter";
+  font-size: 12px;
+  line-height: 16px;
+  margin-left: 16px;
+}
+
+.hint {
+  color: #605d62;
+}
+
+.error {
+  color: #b3261e;
+}
+
+.errorLabel {
+  color: #b3261e;
+}
+
+.errorWrapper input {
+  outline: 2px solid #b3261e;
+}
+
+.withIcon input {
+  padding-left: 40px;
+  padding-right: 16px;
+}
+
+.baseIcon {
+  z-index: 1;
+  top: 16px;
+  position: absolute;
+}
+
+.leftIcon {
+  left: 10px;
+}
+
+.rightIcon {
+  top: 16px;
+  right: 10px;
+}
+
+.rightIcon:hover {
+  cursor: pointer;
+}
+
+.labelDisabled {
+  color: rgba(72, 70, 73, 0.38);
+}
+
+.inputDisabled {
+  color: #484649;
+  border-color: #484649;
+  opacity: 0.38;
+}

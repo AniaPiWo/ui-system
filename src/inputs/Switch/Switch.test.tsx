@@ -12,14 +12,24 @@ describe("Switch component", () => {
       <Switch
         id="test-switch"
         checked={checked}
-        onChange={(newChecked) => {
-          checked = newChecked;
-          handleChange(newChecked);
+        onChange={(event) => {
+          checked = event.target.checked;
+          handleChange(event.target.checked);
           rerender(
             <Switch
               id="test-switch"
               checked={checked}
-              onChange={handleChange}
+              onChange={(e) => {
+                checked = e.target.checked;
+                handleChange(e.target.checked);
+                rerender(
+                  <Switch
+                    id="test-switch"
+                    checked={checked}
+                    onChange={handleChange}
+                  />
+                );
+              }}
             />
           );
         }}

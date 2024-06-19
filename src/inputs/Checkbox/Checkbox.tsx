@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Checkbox.module.css";
 
 export interface CheckboxProps {
@@ -8,10 +8,10 @@ export interface CheckboxProps {
   disabled?: boolean;
   name?: string;
   value?: string;
-  onChange(checked: boolean): void;
+  onChange(event: React.ChangeEvent<HTMLInputElement>): void;
 }
 
-export const Checkbox = ({
+export const Checkbox: React.FC<CheckboxProps> = ({
   id,
   label,
   checked = false,
@@ -20,17 +20,16 @@ export const Checkbox = ({
   value,
   onChange,
 }: CheckboxProps) => {
-  const [isChecked, setIsChecked] = React.useState(checked);
+  const [isChecked, setIsChecked] = useState(checked);
 
-  React.useEffect(() => {
+  useEffect(() => {
     setIsChecked(checked);
   }, [checked]);
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleClick = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (!disabled) {
-      const newChecked = event.target.checked;
-      setIsChecked(newChecked);
-      onChange(newChecked);
+      setIsChecked(event.target.checked);
+      onChange(event);
     }
   };
 
@@ -43,7 +42,7 @@ export const Checkbox = ({
         value={value}
         checked={isChecked}
         disabled={disabled}
-        onChange={handleChange}
+        onChange={handleClick}
         className={styles.checkbox}
       />
       {label}
