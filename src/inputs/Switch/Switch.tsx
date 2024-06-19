@@ -11,7 +11,7 @@ export interface SwitchProps {
   onChange(event: React.ChangeEvent<HTMLInputElement>): void;
 }
 
-export const Switch = ({
+export const Switch: React.FC<SwitchProps> = ({
   id,
   checked = false,
   disabled = false,

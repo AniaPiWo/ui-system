@@ -1,7 +1,7 @@
 import * as React from "react";
 import { render, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import { Switch, SwitchProps } from "./Switch";
+import { Switch } from "./Switch";
 
 describe("Switch component", () => {
   test("onChange handler should be called when clicking on it, when one is not disabled. Expected isChecked should be true. After clicking on it again, expected isChecked value should be false", () => {
