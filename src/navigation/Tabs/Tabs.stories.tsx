@@ -1,34 +1,39 @@
-import { Tab, Tabs } from "./Tabs";
+import React from "react";
 import { Meta, Story } from "@storybook/react";
-import * as React from "react";
+import { Tabs } from "./Tabs";
 
 export default {
-  component: Tabs,
   title: "Navigation/Tabs",
+  component: Tabs,
 } as Meta;
 
-const Template: Story<{ activeTab: number }> = (args) => {
-  const tabs = [
-    { label: "Breakfast" },
-    { label: "Lunches" },
-    { label: "Brunches" },
-    {
-      label: "Dinners",
-    },
-    { label: "Snacks" },
-    { label: "Drinks" },
-  ];
+const Template: Story = (args) => <Tabs tabs={[]} {...args} />;
 
-  return (
-    <Tabs activeTab={args.activeTab}>
-      {tabs.map((tab, index) => (
-        <Tab key={index} label={tab.label} index={index} />
-      ))}
-    </Tabs>
-  );
+export const Default = Template.bind({});
+Default.args = {
+  tabs: [
+    { label: "Tab 1", content: "Content 1" },
+    { label: "Tab 2", content: "Content 2" },
+    { label: "Tab 3", content: "Content 3" },
+  ],
+  initialActiveTab: 0,
 };
 
-export const TabsStory = Template.bind({});
-TabsStory.args = {
-  activeTab: 1,
+export const WithCustomInitialTab = Template.bind({});
+WithCustomInitialTab.args = {
+  tabs: [
+    { label: "Tab 1", content: "Content 1" },
+    { label: "Tab 2", content: "Content 2" },
+    { label: "Tab 3", content: "Content 3" },
+  ],
+  initialActiveTab: 1,
+};
+
+export const DynamicTabs = Template.bind({});
+DynamicTabs.args = {
+  tabs: Array.from({ length: 5 }, (_, index) => ({
+    label: `Tab ${index + 1}`,
+    content: `Content ${index + 1}`,
+  })),
+  initialActiveTab: 0,
 };
