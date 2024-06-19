@@ -4,7 +4,6 @@ import CancelIcon from "../../assets/icons/CancelIcon";
 import ErrorIcon from "../../assets/icons/ErrorIcon";
 import MagGlassIcon from "../../assets/icons/MagGlassIcon";
 import classNames from "classnames/bind";
-
 import styles from "./TextField.module.css";
 
 const cx = classNames.bind(styles);
