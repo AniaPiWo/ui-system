@@ -12,9 +12,21 @@ const Template: Story = (args) => <Tabs tabs={[]} {...args} />;
 export const Default = Template.bind({});
 Default.args = {
   tabs: [
-    { label: "Tab 1", content: "Content 1" },
-    { label: "Tab 2", content: "Content 2" },
-    { label: "Tab 3", content: "Content 3" },
+    {
+      label: "Tab 1",
+      content:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam illum quidem iusto velit suscipit labore, doloremque magnam quis, libero architecto quos officia, tempora tenetur corporis beatae repellat blanditiis aliquam ipsa earum explicabo deleniti ipsum. Voluptate voluptatibus, placeat ipsum aliquid, voluptatum, enim ducimus provident dignissimos dolorum harum dolore exercitationem reprehenderit quisquam?",
+    },
+    {
+      label: "Tab 2",
+      content:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam illum quidem iusto velit suscipit labore, doloremque magnam quis, libero architecto quos officia, tempora tenetur corporis beatae repellat blanditiis aliquam ipsa earum explicabo deleniti ipsum. Voluptate voluptatibus, placeat ipsum aliquid, voluptatum, enim ducimus provident dignissimos dolorum harum dolore exercitationem reprehenderit quisquam?",
+    },
+    {
+      label: "Tab 3",
+      content:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam illum quidem iusto velit suscipit labore, doloremque magnam quis, libero architecto quos officia, tempora tenetur corporis beatae repellat blanditiis aliquam ipsa earum explicabo deleniti ipsum. Voluptate voluptatibus, placeat ipsum aliquid, voluptatum, enim ducimus provident dignissimos dolorum harum dolore exercitationem reprehenderit quisquam?",
+    },
   ],
   initialActiveTab: 0,
 };
@@ -22,9 +34,21 @@ Default.args = {
 export const WithCustomInitialTab = Template.bind({});
 WithCustomInitialTab.args = {
   tabs: [
-    { label: "Tab 1", content: "Content 1" },
-    { label: "Tab 2", content: "Content 2" },
-    { label: "Tab 3", content: "Content 3" },
+    {
+      label: "Tab 1",
+      content:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam illum quidem iusto velit suscipit labore, doloremque magnam quis, libero architecto quos officia, tempora tenetur corporis beatae repellat blanditiis aliquam ipsa earum explicabo deleniti ipsum. Voluptate voluptatibus, placeat ipsum aliquid, voluptatum, enim ducimus provident dignissimos dolorum harum dolore exercitationem reprehenderit quisquam?",
+    },
+    {
+      label: "Tab 2",
+      content:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam illum quidem iusto velit suscipit labore, doloremque magnam quis, libero architecto quos officia, tempora tenetur corporis beatae repellat blanditiis aliquam ipsa earum explicabo deleniti ipsum. Voluptate voluptatibus, placeat ipsum aliquid, voluptatum, enim ducimus provident dignissimos dolorum harum dolore exercitationem reprehenderit quisquam?",
+    },
+    {
+      label: "Tab 3",
+      content:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam illum quidem iusto velit suscipit labore, doloremque magnam quis, libero architecto quos officia, tempora tenetur corporis beatae repellat blanditiis aliquam ipsa earum explicabo deleniti ipsum. Voluptate voluptatibus, placeat ipsum aliquid, voluptatum, enim ducimus provident dignissimos dolorum harum dolore exercitationem reprehenderit quisquam?",
+    },
   ],
   initialActiveTab: 1,
 };
