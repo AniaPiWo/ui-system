@@ -28,6 +28,8 @@
   align-items: center;
   margin-top: 2px;
   width: 32px;
+  height: 32px;
+  border-radius: 50%;
   font-family: Inter, sans-serif;
   color: #484649;
   font-size: 16px;
@@ -35,6 +37,14 @@
   cursor: pointer;
   background-color: inherit;
   border: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.pageNumber:hover {
+  background-color: #c9c5ca;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
 }
 
 .pageNumber.active {
