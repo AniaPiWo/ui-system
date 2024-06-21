@@ -1,4 +1,4 @@
-import React, { useContext, PropsWithChildren } from "react";
+import React, { useEffect, useContext, PropsWithChildren } from "react";
 import classNames from "classnames/bind";
 import styles from "./Tabs.module.css";
 
@@ -70,6 +70,10 @@ export const Tabs = ({
   initialActiveTab = 0,
 }: PropsWithChildren<TabsProps>) => {
   const [activeTab, setActiveTab] = React.useState(initialActiveTab);
+
+  useEffect(() => {
+    setActiveTab(initialActiveTab);
+  }, [initialActiveTab]);
 
   return (
     <div className={styles.tabsWrapper}>

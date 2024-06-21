@@ -1,18 +1,20 @@
 .tabsWrapper {
   display: flex;
-  flex-direction: row;
-  width: fit-content;
+  flex-direction: column;
+  width: 53rem;
 }
 
 .tabWrapper {
   position: relative;
   display: flex;
-  flex-direction: column;
   text-align: center;
   padding-left: 16px;
   padding-right: 16px;
   border-bottom: 1px solid #e7e0ec;
-  border: 1px solid aqua;
+}
+
+.tabsHeader {
+  display: flex;
 }
 
 .label {
@@ -25,6 +27,7 @@
   color: #000000;
   width: 108px;
   margin-inline: auto;
+  cursor: pointer;
 }
 
 .tabActive .label {
@@ -33,18 +36,18 @@
 }
 
 .tabActive .bar {
-  width: 100%;
+  width: 50%;
   height: 5px;
   background-color: #b23386;
   position: absolute;
-  top: 25px;
+  top: 26px;
+  left: 25%;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
 
-.tabContent {
+.tabsContent {
   font-family: Inter, sans-serif;
   padding: 16px;
   text-align: start;
-  border: 1px solid red;
 }
