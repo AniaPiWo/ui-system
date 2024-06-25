@@ -1,22 +1,26 @@
 .table {
   border-spacing: 0px;
-  outline: 1.5px solid #1c1b1f;
+  border: 1px solid #1c1b1f;
   font-family: "Inter", sans-serif;
-  font-style: normal;
   font-weight: 500;
   font-size: 16px;
 }
 
 .tableHead {
   background: #1c1b1f;
+  border: 1px solid #1c1b1f;
   color: #ffffff;
-  height: 56px;
+  padding: 8px 24px 8px 16px;
   border-spacing: 0;
 }
 
 .tableRow {
-  outline: 0.1px solid #1c1b1f;
   display: flex;
+  border-bottom: 1px solid #1c1b1f;
+}
+
+.tableRow:last-child {
+  border-bottom: none;
 }
 
 .tableCell {
@@ -24,6 +28,4 @@
   font-size: 14px;
   line-height: 20px;
   width: 150px;
-  display: flex;
-  justify-content: center;
 }

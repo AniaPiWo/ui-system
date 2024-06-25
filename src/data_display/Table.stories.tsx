@@ -23,21 +23,21 @@ const Template: Story<TableProps> = (args) => (
   <Table>
     <TableHead>
       <TableRow>
-        <TableCell>Dog’s breed</TableCell>
-        <TableCell align="right">Name</TableCell>
-        <TableCell align="right">Weight (kg)</TableCell>
-        <TableCell align="right">Height (cm)</TableCell>
-        <TableCell align="right">Chip</TableCell>
+        <TableCell align="left">Dog’s breed</TableCell>
+        <TableCell align="center">Name</TableCell>
+        <TableCell align="center">Weight (kg)</TableCell>
+        <TableCell align="center">Height (cm)</TableCell>
+        <TableCell align="center">Chip</TableCell>
       </TableRow>
     </TableHead>
     <TableBody>
       {rows.map((row) => (
         <TableRow key={row.name}>
-          <TableCell>{row.name}</TableCell>
-          <TableCell align="right">{row.calories}</TableCell>
-          <TableCell align="right">{row.fat}</TableCell>
-          <TableCell align="right">{row.carbs}</TableCell>
-          <TableCell align="right">{row.protein}</TableCell>
+          <TableCell align="left">{row.name}</TableCell>
+          <TableCell align="center">{row.calories}</TableCell>
+          <TableCell align="center">{row.fat}</TableCell>
+          <TableCell align="center">{row.carbs}</TableCell>
+          <TableCell align="center">{row.protein}</TableCell>
         </TableRow>
       ))}
     </TableBody>
