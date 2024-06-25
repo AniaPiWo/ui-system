@@ -44,6 +44,6 @@ const Template: Story = (args) => <Tabs tabs={[]} {...args} />;
 
 export const TabsStory = Template.bind({});
 TabsStory.args = {
-  tabs: tabs,
   initialActiveTab: 2,
+  tabs: tabs,
 };
