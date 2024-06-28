@@ -11078,14 +11078,12 @@
                 : Object.assign(Object.assign({}, additionalParams), {
                     id: storyId,
                   });
-            return ""
-              .concat(url)
-              .concat(
-                qs__WEBPACK_IMPORTED_MODULE_55___default.a.stringify(params, {
-                  addQueryPrefix: !0,
-                  encode: !1,
-                })
-              );
+            return "".concat(url).concat(
+              qs__WEBPACK_IMPORTED_MODULE_55___default.a.stringify(params, {
+                addQueryPrefix: !0,
+                encode: !1,
+              })
+            );
           },
           Zoom = function Zoom(_ref118) {
             var zoom = _ref118.zoom,
@@ -44100,14 +44098,12 @@
                     0 !== nonLeafChildren.length)
                   )
                     throw new Error(
-                      "Unexpected '"
-                        .concat(item.id, "': ")
-                        .concat(
-                          JSON.stringify({
-                            isComponent: isComponent,
-                            nonLeafChildren: nonLeafChildren,
-                          })
-                        )
+                      "Unexpected '".concat(item.id, "': ").concat(
+                        JSON.stringify({
+                          isComponent: isComponent,
+                          nonLeafChildren: nonLeafChildren,
+                        })
+                      )
                     );
                   return component;
                 })
