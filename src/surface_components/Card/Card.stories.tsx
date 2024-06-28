@@ -2,8 +2,8 @@ import React from "react";
 import { Meta, Story } from "@storybook/react";
 import { Card, CardImage, CardContent } from "./Card";
 import styles from "./Card.module.css";
-import { Button } from "../inputs";
-import cardimg from "../assets/cardimg.jpg";
+import { Button } from "../../inputs";
+import cardimg from "../../assets/cardimg.jpg";
 
 export default {
   title: "SurfaceComponents/Card",
