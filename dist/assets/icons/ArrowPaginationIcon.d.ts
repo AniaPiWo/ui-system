@@ -1,6 +1,8 @@
 /// <reference types="react" />
 interface ArrowPaginationIconProps {
-    className?: string;
+  className?: string;
 }
-declare const ArrowPaginationIcon: ({ className }: ArrowPaginationIconProps) => JSX.Element;
+declare const ArrowPaginationIcon: ({
+  className,
+}: ArrowPaginationIconProps) => JSX.Element;
 export default ArrowPaginationIcon;

@@ -1,10 +1,10 @@
 import React, { PropsWithChildren } from "react";
 export interface TableProps {
-    children: React.ReactNode;
+  children: React.ReactNode;
 }
 export interface TableCellProps {
-    align?: "left" | "center" | "right";
-    children: React.ReactNode;
+  align?: "left" | "center" | "right";
+  children: React.ReactNode;
 }
 export declare const Table: React.FC<PropsWithChildren<TableProps>>;
 export declare const TableHead: React.FC<PropsWithChildren<{}>>;

@@ -1,20 +1,29 @@
 import React, { PropsWithChildren } from "react";
 interface TabProps {
-    label: string;
-    index: number;
+  label: string;
+  index: number;
 }
-export declare const Tab: ({ label, index }: PropsWithChildren<TabProps>) => JSX.Element;
+export declare const Tab: ({
+  label,
+  index,
+}: PropsWithChildren<TabProps>) => JSX.Element;
 interface TabContentProps {
-    index: number;
+  index: number;
 }
-export declare const TabContent: ({ index, children, }: PropsWithChildren<TabContentProps>) => JSX.Element | null;
+export declare const TabContent: ({
+  index,
+  children,
+}: PropsWithChildren<TabContentProps>) => JSX.Element | null;
 interface TabData {
-    label: string;
-    content: React.ReactNode;
+  label: string;
+  content: React.ReactNode;
 }
 interface TabsProps {
-    tabs: TabData[];
-    initialActiveTab?: number;
+  tabs: TabData[];
+  initialActiveTab?: number;
 }
-export declare const Tabs: ({ tabs, initialActiveTab, }: PropsWithChildren<TabsProps>) => JSX.Element;
+export declare const Tabs: ({
+  tabs,
+  initialActiveTab,
+}: PropsWithChildren<TabsProps>) => JSX.Element;
 export {};
