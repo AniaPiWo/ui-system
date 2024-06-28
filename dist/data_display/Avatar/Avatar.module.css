@@ -1,0 +1,39 @@
+.avatar {
+  background: #23a094;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #fff;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  line-height: 24px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.big {
+  width: 40px;
+  height: 40px;
+}
+
+.medium {
+  width: 32px;
+  height: 32px;
+}
+
+.small {
+  width: 24px;
+  height: 24px;
+}
+
+.fallback {
+  font-size: 16px;
+}
