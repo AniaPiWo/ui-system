@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { Meta, Story } from "@storybook/react";
 import { List, ListItem, ListHeader, ListText, ListProps } from "./List";
 import Avatar from "../Avatar/Avatar";
@@ -10,7 +10,7 @@ export default {
   component: List,
 } as Meta;
 
-export const TextStory: Story<ListProps> = (args) => (
+export const TextStory: Story<ListProps> = () => (
   <List>
     <ListItem>
       <ListHeader>List item</ListHeader>
@@ -21,7 +21,7 @@ export const TextStory: Story<ListProps> = (args) => (
   </List>
 );
 
-export const HeaderOnlyStory: Story<ListProps> = (args) => (
+export const HeaderOnlyStory: Story<ListProps> = () => (
   <List>
     <ListItem>
       <ListHeader>List item</ListHeader>
@@ -29,7 +29,7 @@ export const HeaderOnlyStory: Story<ListProps> = (args) => (
   </List>
 );
 
-export const AvatarStory: Story<ListProps> = (args) => (
+export const AvatarStory: Story<ListProps> = () => (
   <List>
     <ListItem>
       <Avatar size="big" alt="Avatar" />
@@ -43,7 +43,7 @@ export const AvatarStory: Story<ListProps> = (args) => (
   </List>
 );
 
-export const SwitchStory: Story<ListProps> = (args) => (
+export const SwitchStory: Story<ListProps> = () => (
   <List>
     <ListItem>
       <Switch
@@ -60,7 +60,7 @@ export const SwitchStory: Story<ListProps> = (args) => (
   </List>
 );
 
-export const CheckboxStory: Story<ListProps> = (args) => (
+export const CheckboxStory: Story<ListProps> = () => (
   <List>
     <ListItem>
       <ListHeader>List item</ListHeader>

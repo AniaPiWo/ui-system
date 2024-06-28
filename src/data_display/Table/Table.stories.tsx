@@ -19,7 +19,7 @@ const rows = [
   { name: "Beagle", calories: 15, fat: 25, carbs: 35, protein: 45 },
 ];
 
-const Template: Story<TableProps> = (args) => (
+const Template: Story<TableProps> = () => (
   <Table>
     <TableHead>
       <TableRow>
