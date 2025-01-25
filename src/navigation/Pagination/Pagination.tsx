@@ -44,18 +44,56 @@ export const Pagination: React.FC<PaginationProps> = ({
   };
 
   const renderPageNumbers = () => {
-    const pageNumbers = Array.from({ length: maxPages }, (_, i) => i + 1);
-    return pageNumbers.map((pageNumber) => (
-      <button
-        key={pageNumber}
-        className={classNames(styles.pageNumber, {
-          [styles.active]: pageNumber === page,
-        })}
-        onClick={() => handlePageClick(pageNumber)}
-      >
-        {pageNumber}
-      </button>
-    ));
+    const pageNumbers: (number | "...")[] = [];
+
+    if (maxPages <= 5) {
+      // Jeśli liczba stron <= 5, pokaż wszystkie strony
+      for (let i = 1; i <= maxPages; i++) {
+        pageNumbers.push(i);
+      }
+    } else {
+      // Dodaj pierwszą stronę
+      pageNumbers.push(1);
+
+      // Dodaj elipsę, jeśli bieżąca strona jest daleko od początku
+      if (page > 3) {
+        pageNumbers.push("...");
+      }
+
+      // Dodaj bieżącą stronę i jej sąsiednie strony
+      const startPage = Math.max(2, page - 1);
+      const endPage = Math.min(maxPages - 1, page + 1);
+
+      for (let i = startPage; i <= endPage; i++) {
+        pageNumbers.push(i);
+      }
+
+      // Dodaj elipsę, jeśli bieżąca strona jest daleko od końca
+      if (page < maxPages - 2) {
+        pageNumbers.push("...");
+      }
+
+      // Dodaj ostatnią stronę
+      pageNumbers.push(maxPages);
+    }
+
+    return pageNumbers.map((pageNumber, index) =>
+      typeof pageNumber === "number" ? (
+        <button
+          key={index}
+          className={classNames(styles.pageNumber, {
+            [styles.active]: pageNumber === page,
+          })}
+          onClick={() => handlePageClick(pageNumber)}
+        >
+          {pageNumber}
+        </button>
+      ) : (
+        <span key={index} className={styles.ellipsis}>
+          {pageNumber}
+        </span>
+      )
+    );
   };
 
   return (

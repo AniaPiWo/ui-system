@@ -14,9 +14,9 @@ export const ListItem: React.FC<ListProps> = ({ children }) => {
 };
 
 export const ListHeader: React.FC<ListProps> = ({ children }) => {
-  return <li className={styles.listHeader}>{children}</li>;
+  return <a className={styles.listHeader}>{children}</a>;
 };
 
 export const ListText: React.FC<ListProps> = ({ children }) => {
-  return <li className={styles.listText}>{children}</li>;
+  return <a className={styles.listText}>{children}</a>;
 };
