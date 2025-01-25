@@ -1,5 +1,6 @@
 .list {
   display: flex;
+  gap: 16px;
   width: fit-content;
   align-items: center;
   justify-content: space-between;
@@ -9,10 +10,12 @@
   align-self: stretch;
   min-width: 350px;
   max-height: 88px;
-  gap: 16px;
 }
 
 .listItem {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
 .listHeader {

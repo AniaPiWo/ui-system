@@ -1,3 +1,9 @@
+.switchContainer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
 .switch {
   position: relative;
   display: inline-block;
@@ -69,4 +75,13 @@
   height: 24px;
   width: 24px;
   bottom: 3px;
+}
+
+.label {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  color: #787579;
 }

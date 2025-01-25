@@ -1,4 +1,5 @@
-import React, { PropsWithChildren, useState, useEffect } from "react";
+import React, { PropsWithChildren } from "react";
+import clsx from "clsx";
 import PlusIcon from "../../assets/icons/PlusIcon";
 import LoadingIcon from "../../assets/icons/LoadingIcon";
 import styles from "./Button.module.css";
@@ -19,61 +20,42 @@ export const Button = ({
   icon = false,
   isLoading = false,
   onClick,
-  ...props
+  children,
 }: PropsWithChildren<ButtonProps>) => {
-  const [isLoadingState, setIsLoadingState] = useState(isLoading);
-  const [disabledState, setDisabledState] = useState(disabled);
-
-  useEffect(() => {
-    setIsLoadingState(isLoading);
-  }, [isLoading]);
-
-  useEffect(() => {
-    setDisabledState(disabled);
-  }, [disabled]);
-
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    if (!disabledState && !isLoadingState) {
-      setIsLoadingState(true);
+    if (!disabled && !isLoading) {
       onClick(event);
     }
   };
 
-  const variantClass =
-    variant === "primary" ? styles.primary : styles.secondary;
-
-  const getDisabledClassForSpecificVariant = (): string | void => {
-    if (disabled) {
-      return variant === "primary"
-        ? styles.disabledPrimary
-        : styles.disabledSecondary;
-    }
-  };
-
-  const dynamicClasses = [
+  const buttonClasses = clsx(
     styles.template,
-    variantClass,
-    getDisabledClassForSpecificVariant(),
-    isLoading ? styles.loadingState : "",
-  ].join(" ");
+    variant === "primary" ? styles.primary : styles.secondary,
+    {
+      [styles.disabledPrimary]: disabled && variant === "primary",
+      [styles.disabledSecondary]: disabled && variant === "secondary",
+      [styles.loadingState]: isLoading,
+    }
+  );
 
   return (
     <button
-      className={dynamicClasses}
+      className={buttonClasses}
       onClick={handleClick}
       disabled={disabled || isLoading}
       type={type}
+      aria-busy={isLoading}
     >
       {icon && (
         <span className={styles.icon}>
-          {isLoading && !disabled ? (
+          {isLoading ? (
             <LoadingIcon className={styles.loading} />
           ) : (
             <PlusIcon />
           )}
         </span>
-      )}{" "}
-      {isLoading ? "Loading..." : props.children}
+      )}
+      {isLoading ? "Loading..." : children}
     </button>
   );
 };

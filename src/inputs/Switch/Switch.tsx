@@ -13,6 +13,7 @@ export interface SwitchProps {
 
 export const Switch: React.FC<SwitchProps> = ({
   id,
+  label,
   checked = false,
   disabled = false,
   onChange,
@@ -33,18 +34,30 @@ export const Switch: React.FC<SwitchProps> = ({
   };
 
   return (
-    <label className={`${styles.switch} ${disabled ? styles.disabled : ""}`}>
-      <input
-        type="checkbox"
-        id={id}
-        name={name}
-        value={value}
-        checked={isChecked}
-        disabled={disabled}
-        onChange={handleChange}
-        className={styles.input}
-      />
-      <span className={styles.slider}></span>
-    </label>
+    <div className={styles.switchContainer}>
+      <label
+        htmlFor={id}
+        className={`${styles.switch} ${disabled ? styles.disabled : ""}`}
+      >
+        <input
+          type="checkbox"
+          id={id}
+          name={name}
+          value={value}
+          checked={isChecked}
+          disabled={disabled}
+          onChange={handleChange}
+          className={styles.input}
+        />
+        <span className={styles.slider}></span>
+      </label>
+      {label && (
+        <span
+          className={`${styles.label} ${disabled ? styles.disabledLabel : ""}`}
+        >
+          {label}
+        </span>
+      )}
+    </div>
   );
 };
